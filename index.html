@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -28,10 +29,61 @@
   <style>
     html {
       scroll-behavior: smooth;
+      transition: background-color 0.3s, color 0.3s;
     }
 
+    /* Dark mode base */
+    .dark body { background-color: #0f0f0f; color: #e5e5e5; }
+    .dark .hero-bg { background: #0f0f0f; }
+    .dark .bg-white { background-color: #1a1a1a !important; }
+    .dark .bg-gray-50 { background-color: #141414 !important; }
+    .dark .text-gray-900 { color: #f0f0f0 !important; }
+    .dark .text-gray-800 { color: #e0e0e0 !important; }
+    .dark .text-gray-700 { color: #d0d0d0 !important; }
+    .dark .text-gray-500 { color: #888 !important; }
+    .dark .text-gray-400 { color: #666 !important; }
+    .dark .border-gray-100 { border-color: #2a2a2a !important; }
+    .dark .border-gray-200 { border-color: #2a2a2a !important; }
+    .dark .border-gray-300 { border-color: #333 !important; }
+    .dark .shadow-lg { box-shadow: 0 10px 40px rgba(0,0,0,0.6) !important; }
+    .dark .shadow-sm { box-shadow: 0 1px 3px rgba(0,0,0,0.5) !important; }
+    .dark #header.bg-white { background-color: #0f0f0f !important; }
+    .dark .bg-gray-950 { background-color: #080808 !important; }
+
+    /* Botão tema */
+    #theme-toggle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+      background: transparent;
+    }
+    #theme-toggle:hover { opacity: 1; }
+
     .hero-bg {
-      background: linear-gradient(135deg, #001a3a 0%, #003F7A 50%, #0057A8 100%);
+      background: #f8f8f6;
+    }
+
+    .hero-line {
+      width: 1px;
+      height: 80px;
+      background: #0057A8;
+    }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-animate {
+      animation: reveal 0.9s ease forwards;
+      opacity: 0;
     }
 
     .nav-link {
@@ -86,71 +138,76 @@
   <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
       <a href="index.html" class="flex items-baseline gap-2">
-        <span class="text-2xl font-black text-white tracking-tight">AAVAL</span>
-        <span class="text-xs text-white/60 font-light tracking-widest uppercase">Engenharia e Perícia</span>
+        <span class="text-2xl font-black text-primary tracking-tight">AAVAL</span>
+        <span class="text-xs text-gray-400 font-light tracking-widest uppercase">Engenharia e Perícia</span>
       </a>
-      <nav class="hidden md:flex gap-8 text-sm font-medium text-white/80">
-        <a href="index.html" class="nav-link active text-white">Home</a>
-        <a href="#quem-somos" class="nav-link hover:text-white transition">Empresa</a>
-        <a href="#servicos" class="nav-link hover:text-white transition">Serviços</a>
-        <a href="#clientes" class="nav-link hover:text-white transition">Clientes</a>
-        <a href="contato.html" class="nav-link hover:text-white transition">Contato</a>
+      <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-500">
+        <a href="index.html" class="nav-link active text-primary">Home</a>
+        <a href="#quem-somos" class="nav-link hover:text-gray-900 transition">Empresa</a>
+        <a href="#servicos" class="nav-link hover:text-gray-900 transition">Serviços</a>
+        <a href="#clientes" class="nav-link hover:text-gray-900 transition">Clientes</a>
+        <a href="contato.html" class="nav-link hover:text-gray-900 transition">Contato</a>
       </nav>
-      <a href="tel:+551155419893"
-        class="hidden md:flex items-center gap-2 text-sm font-semibold bg-white text-primary px-4 py-2 rounded-lg hover:bg-blue-50 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.23 1.05L7.5 9.5a16 16 0 006.99 7l1.47-1.6a1 1 0 011.05-.23l3.3 1.1a1 1 0 01.69.95V19a2 2 0 01-2 2C9.16 21 3 14.84 3 7V5z" />
-        </svg>
-        (11) 5541-9893
-      </a>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" title="Alternar tema" class="text-gray-500 dark:text-gray-400">
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+          </svg>
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07-6.07l-.71.71M6.34 17.66l-.71.71m12.02 0l-.71-.71M6.34 6.34l-.71-.71M12 5a7 7 0 100 14A7 7 0 0012 5z" />
+          </svg>
+        </button>
+        <a href="tel:+551155419893"
+          class="hidden md:flex items-center gap-2 text-sm font-semibold bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.23 1.05L7.5 9.5a16 16 0 006.99 7l1.47-1.6a1 1 0 011.05-.23l3.3 1.1a1 1 0 01.69.95V19a2 2 0 01-2 2C9.16 21 3 14.84 3 7V5z" />
+          </svg>
+          (11) 5541-9893
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero-bg min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+  <section class="hero-bg min-h-screen flex flex-col justify-center relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 w-full pt-32 pb-24">
 
-    <!-- Padrão de fundo decorativo -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute top-20 left-10 w-96 h-96 rounded-full border border-white"></div>
-      <div class="absolute top-40 left-32 w-64 h-64 rounded-full border border-white"></div>
-      <div class="absolute bottom-20 right-10 w-80 h-80 rounded-full border border-white"></div>
-      <div class="absolute bottom-40 right-32 w-48 h-48 rounded-full border border-white"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-      <p class="text-primary bg-white/10 text-white/70 text-xs font-semibold uppercase tracking-[0.3em] mb-6 inline-block px-4 py-2 rounded-full border border-white/20"
-        data-aos="fade-down" data-aos-duration="800">
-        Engenharia · Avaliações · Perícias
-      </p>
-      <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6 tracking-tight" data-aos="fade-up"
-        data-aos-duration="900" data-aos-delay="100">
-        Excelência técnica<br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-100">
-          há mais de 10 anos
-        </span>
-      </h1>
-      <p class="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light" data-aos="fade-up"
-        data-aos-duration="900" data-aos-delay="200">
-        Soluções técnicas especializadas para construtoras, incorporadoras e particulares em todo o Brasil.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-duration="900"
-        data-aos-delay="300">
-        <a href="#servicos"
-          class="bg-white text-primary font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition text-sm tracking-wide">
-          Nossos Serviços
-        </a>
-        <a href="contato.html"
-          class="border border-white/40 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition text-sm tracking-wide">
-          Fale Conosco
-        </a>
+      <!-- Label -->
+      <div class="flex items-center gap-4 mb-10 hero-animate" style="animation-delay: 0.1s">
+        <div class="hero-line"></div>
+        <span class="text-xs font-semibold text-primary uppercase tracking-[0.3em]">Engenharia &middot; Avaliações &middot; Perícias</span>
       </div>
-    </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40"
-      data-aos="fade-up" data-aos-delay="600">
-      <div class="w-px h-10 bg-gradient-to-b from-white/40 to-transparent animate-pulse"></div>
+      <!-- Heading -->
+      <h1 class="text-6xl md:text-8xl font-black text-gray-900 leading-[0.95] tracking-tight mb-10 hero-animate" style="animation-delay: 0.25s">
+        Rigor técnico.<br>
+        <span class="text-primary">Resultado</span><br>
+        concreto.
+      </h1>
+
+      <!-- Subtext + CTA lado a lado -->
+      <div class="flex flex-col md:flex-row md:items-end gap-10 hero-animate" style="animation-delay: 0.45s">
+        <p class="text-gray-400 text-base md:text-lg max-w-sm leading-relaxed font-light">
+          Soluções técnicas especializadas para construtoras, incorporadoras e particulares em todo o Brasil.
+        </p>
+        <div class="flex gap-4">
+          <a href="#servicos" class="bg-primary text-white font-bold px-7 py-3.5 rounded-lg hover:bg-secondary transition text-sm tracking-wide">
+            Nossos Serviços
+          </a>
+          <a href="contato.html" class="border border-gray-300 text-gray-700 font-semibold px-7 py-3.5 rounded-lg hover:border-primary hover:text-primary transition text-sm tracking-wide">
+            Fale Conosco
+          </a>
+        </div>
+      </div>
+
+      <!-- Linha divisória inferior -->
+      <div class="mt-20 flex items-center gap-8 hero-animate" style="animation-delay: 0.6s">
+        <div class="flex-1 h-px bg-gray-200"></div>
+        <span class="text-xs text-gray-400 tracking-widest uppercase">São Paulo &mdash; Brasil</span>
+        <div class="flex-1 h-px bg-gray-200"></div>
+      </div>
+
     </div>
   </section>
 
@@ -492,6 +549,27 @@
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+    // Dark mode toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('theme-toggle');
+    const iconMoon = document.getElementById('icon-moon');
+    const iconSun = document.getElementById('icon-sun');
+
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+      iconMoon.classList.add('hidden');
+      iconSun.classList.remove('hidden');
+    }
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      iconMoon.classList.toggle('hidden', isDark);
+      iconSun.classList.toggle('hidden', !isDark);
+    });
+
     AOS.init({ once: true, easing: 'ease-out-cubic' });
 
     // Contadores animados
@@ -543,17 +621,9 @@
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 60) {
-        header.classList.remove('bg-transparent');
-        header.classList.add('bg-white', 'shadow-md');
-        header.querySelectorAll('.nav-link').forEach(l => l.classList.replace('text-white', 'text-gray-700'));
-        header.querySelector('a[href="index.html"] span:first-child').classList.replace('text-white', 'text-primary');
-        header.querySelector('a[href="index.html"] span:last-child').classList.replace('text-white/60', 'text-gray-400');
+        header.classList.add('bg-white', 'shadow-sm');
       } else {
-        header.classList.add('bg-transparent');
-        header.classList.remove('bg-white', 'shadow-md');
-        header.querySelectorAll('.nav-link').forEach(l => l.classList.replace('text-gray-700', 'text-white'));
-        header.querySelector('a[href="index.html"] span:first-child').classList.replace('text-primary', 'text-white');
-        header.querySelector('a[href="index.html"] span:last-child').classList.replace('text-gray-400', 'text-white/60');
+        header.classList.remove('bg-white', 'shadow-sm');
       }
     });
   </script>
