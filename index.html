@@ -1,0 +1,563 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AAVAL Engenharia e Perícia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0057A8',
+            secondary: '#003F7A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #001a3a 0%, #003F7A 50%, #0057A8 100%);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #0057A8;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .counter {
+      transition: all 0.3s;
+    }
+
+    /* Linha decorativa */
+    .section-line {
+      width: 48px;
+      height: 3px;
+      background: #0057A8;
+      margin-bottom: 1rem;
+    }
+
+    /* Hover nos cards de serviço */
+    .service-card:hover .service-img {
+      transform: scale(1.04);
+    }
+
+    .service-img {
+      transition: transform 0.5s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="index.html" class="flex items-baseline gap-2">
+        <span class="text-2xl font-black text-white tracking-tight">AAVAL</span>
+        <span class="text-xs text-white/60 font-light tracking-widest uppercase">Engenharia e Perícia</span>
+      </a>
+      <nav class="hidden md:flex gap-8 text-sm font-medium text-white/80">
+        <a href="index.html" class="nav-link active text-white">Home</a>
+        <a href="#quem-somos" class="nav-link hover:text-white transition">Empresa</a>
+        <a href="#servicos" class="nav-link hover:text-white transition">Serviços</a>
+        <a href="#clientes" class="nav-link hover:text-white transition">Clientes</a>
+        <a href="contato.html" class="nav-link hover:text-white transition">Contato</a>
+      </nav>
+      <a href="tel:+551155419893"
+        class="hidden md:flex items-center gap-2 text-sm font-semibold bg-white text-primary px-4 py-2 rounded-lg hover:bg-blue-50 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.23 1.05L7.5 9.5a16 16 0 006.99 7l1.47-1.6a1 1 0 011.05-.23l3.3 1.1a1 1 0 01.69.95V19a2 2 0 01-2 2C9.16 21 3 14.84 3 7V5z" />
+        </svg>
+        (11) 5541-9893
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+
+    <!-- Padrão de fundo decorativo -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-20 left-10 w-96 h-96 rounded-full border border-white"></div>
+      <div class="absolute top-40 left-32 w-64 h-64 rounded-full border border-white"></div>
+      <div class="absolute bottom-20 right-10 w-80 h-80 rounded-full border border-white"></div>
+      <div class="absolute bottom-40 right-32 w-48 h-48 rounded-full border border-white"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+      <p class="text-primary bg-white/10 text-white/70 text-xs font-semibold uppercase tracking-[0.3em] mb-6 inline-block px-4 py-2 rounded-full border border-white/20"
+        data-aos="fade-down" data-aos-duration="800">
+        Engenharia · Avaliações · Perícias
+      </p>
+      <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6 tracking-tight" data-aos="fade-up"
+        data-aos-duration="900" data-aos-delay="100">
+        Excelência técnica<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-100">
+          há mais de 10 anos
+        </span>
+      </h1>
+      <p class="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light" data-aos="fade-up"
+        data-aos-duration="900" data-aos-delay="200">
+        Soluções técnicas especializadas para construtoras, incorporadoras e particulares em todo o Brasil.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-duration="900"
+        data-aos-delay="300">
+        <a href="#servicos"
+          class="bg-white text-primary font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition text-sm tracking-wide">
+          Nossos Serviços
+        </a>
+        <a href="contato.html"
+          class="border border-white/40 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition text-sm tracking-wide">
+          Fale Conosco
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40"
+      data-aos="fade-up" data-aos-delay="600">
+      <div class="w-px h-10 bg-gradient-to-b from-white/40 to-transparent animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="py-20 bg-white border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+        <div data-aos="fade-up" data-aos-delay="0">
+          <p class="text-5xl md:text-6xl font-black text-primary" data-counter="8">0</p>
+          <p class="text-sm text-gray-500 mt-2 font-medium">anos no mercado</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <p class="text-5xl md:text-6xl font-black text-primary">+<span data-counter="500">0</span></p>
+          <p class="text-sm text-gray-500 mt-2 font-medium">laudos emitidos</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <p class="text-5xl md:text-6xl font-black text-primary">+<span data-counter="100">0</span></p>
+          <p class="text-sm text-gray-500 mt-2 font-medium">clientes atendidos</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <p class="text-5xl md:text-6xl font-black text-primary"><span data-counter="30">0</span></p>
+          <p class="text-sm text-gray-500 mt-2 font-medium">anos de experiência</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section id="quem-somos" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+
+      <!-- Imagem esquerda -->
+      <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="900">
+        <div class="relative">
+          <div
+            class="bg-gradient-to-br from-secondary to-primary rounded-2xl w-full aspect-[4/3] flex items-center justify-center overflow-hidden">
+            <!-- Grid decorativo estilo planta baixa -->
+            <svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-40 h-40 text-white opacity-20" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3M9 7h1m-1 4h1m4-4h1m-1 4h1M9 21v-4a1 1 0 011-1h4a1 1 0 011 1v4" />
+            </svg>
+          </div>
+          <!-- Badge flutuante -->
+          <div class="absolute -bottom-5 -right-5 bg-white rounded-xl shadow-lg px-6 py-4 flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Certificados</p>
+              <p class="text-sm font-bold text-gray-800">ABNT NBR 14653</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto direita -->
+      <div class="w-full md:w-1/2 flex flex-col gap-6" data-aos="fade-left" data-aos-duration="900">
+        <div class="section-line"></div>
+        <span class="text-xs font-bold text-primary uppercase tracking-[0.25em]">Quem Somos</span>
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
+          Tradição e expertise em engenharia
+        </h2>
+        <p class="text-gray-500 leading-relaxed">
+          A <strong class="text-gray-800">AAVAL Engenharia e Perícia</strong> é uma empresa com mais de 10 anos de
+          experiência no mercado, atuando ao lado das mais respeitadas construtoras e incorporadoras do país.
+        </p>
+        <p class="text-gray-500 leading-relaxed">
+          Nossos profissionais acumulam quase três décadas de atuação em avaliações e perícias, garantindo rigor
+          técnico, imparcialidade e qualidade em cada serviço prestado.
+        </p>
+        <a href="contato.html"
+          class="self-start mt-2 bg-primary text-white text-sm font-bold px-7 py-3.5 rounded-lg hover:bg-secondary transition tracking-wide">
+          SAIBA MAIS
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="py-0 bg-white">
+
+    <!-- Serviço 1: imagem esquerda, texto direita -->
+    <div class="flex flex-col md:flex-row min-h-[480px]">
+      <div class="w-full md:w-1/2 overflow-hidden service-card" data-aos="fade-right" data-aos-duration="900">
+        <div
+          class="service-img w-full h-72 md:h-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-28 h-28 text-white opacity-20" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          </svg>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-16 py-16 gap-5" data-aos="fade-left"
+        data-aos-duration="900">
+        <div class="section-line"></div>
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">Vistoria de Vizinhança</h2>
+        <p class="text-gray-500 leading-relaxed">Documentação técnica detalhada do estado das edificações vizinhas antes
+          e após o início de obras, protegendo construtoras e proprietários de disputas futuras.</p>
+        <p class="text-gray-500 leading-relaxed">Nossos laudos seguem rigorosamente as normas da <strong
+            class="text-gray-700">ABNT NBR 14653</strong>, garantindo validade técnica e jurídica em todas as etapas.
+        </p>
+        <a href="contato.html"
+          class="self-start mt-2 bg-primary text-white text-sm font-bold px-7 py-3.5 rounded-lg hover:bg-secondary transition tracking-wide">SAIBA
+          MAIS</a>
+      </div>
+    </div>
+
+    <!-- Serviço 2: texto esquerda, imagem direita -->
+    <div class="flex flex-col md:flex-row-reverse min-h-[480px] bg-gray-50">
+      <div class="w-full md:w-1/2 overflow-hidden service-card" data-aos="fade-left" data-aos-duration="900">
+        <div
+          class="service-img w-full h-72 md:h-full bg-gradient-to-bl from-primary to-secondary flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-28 h-28 text-white opacity-20" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-16 py-16 gap-5" data-aos="fade-right"
+        data-aos-duration="900">
+        <div class="section-line"></div>
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">Avaliação de Imóveis</h2>
+        <p class="text-gray-500 leading-relaxed">Determinação do valor de mercado de imóveis residenciais, comerciais e
+          industriais com metodologia científica e embasamento normativo.</p>
+        <p class="text-gray-500 leading-relaxed">Utilizamos o <strong class="text-gray-700">método comparativo de dados
+            de mercado</strong> e o método evolutivo, conforme exigido pelas normas vigentes, para garantir laudos
+          precisos e confiáveis.</p>
+        <a href="contato.html"
+          class="self-start mt-2 bg-primary text-white text-sm font-bold px-7 py-3.5 rounded-lg hover:bg-secondary transition tracking-wide">SAIBA
+          MAIS</a>
+      </div>
+    </div>
+
+    <!-- Serviço 3: imagem esquerda, texto direita -->
+    <div class="flex flex-col md:flex-row min-h-[480px]">
+      <div class="w-full md:w-1/2 overflow-hidden service-card" data-aos="fade-right" data-aos-duration="900">
+        <div
+          class="service-img w-full h-72 md:h-full bg-gradient-to-tr from-secondary to-primary flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-28 h-28 text-white opacity-20" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+              d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+          </svg>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-16 py-16 gap-5" data-aos="fade-left"
+        data-aos-duration="900">
+        <div class="section-line"></div>
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">Perícias de Engenharia</h2>
+        <p class="text-gray-500 leading-relaxed">Elaboração de laudos periciais para processos judiciais e
+          extrajudiciais, com atuação como perito do juízo ou assistente técnico das partes.</p>
+        <p class="text-gray-500 leading-relaxed">Nossa equipe possui <strong class="text-gray-700">vasta experiência em
+            litígios</strong> envolvendo vícios construtivos, danos em edificações, revisão de contratos e apuração de
+          responsabilidades.</p>
+        <a href="contato.html"
+          class="self-start mt-2 bg-primary text-white text-sm font-bold px-7 py-3.5 rounded-lg hover:bg-secondary transition tracking-wide">SAIBA
+          MAIS</a>
+      </div>
+    </div>
+
+    <!-- Serviço 4: texto esquerda, imagem direita -->
+    <div class="flex flex-col md:flex-row-reverse min-h-[480px] bg-gray-50">
+      <div class="w-full md:w-1/2 overflow-hidden service-card" data-aos="fade-left" data-aos-duration="900">
+        <div
+          class="service-img w-full h-72 md:h-full bg-gradient-to-bl from-primary to-secondary flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-28 h-28 text-white opacity-20" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3" />
+          </svg>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 flex flex-col justify-center px-10 md:px-16 py-16 gap-5" data-aos="fade-right"
+        data-aos-duration="900">
+        <div class="section-line"></div>
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">Inspeção Predial</h2>
+        <p class="text-gray-500 leading-relaxed">Avaliação técnica das condições de uso, manutenção e desempenho das
+          edificações, identificando anomalias e falhas que comprometem a segurança e a vida útil do imóvel.</p>
+        <p class="text-gray-500 leading-relaxed">Emitimos o <strong class="text-gray-700">Laudo de Inspeção
+            Predial</strong> com classificação de risco e plano de ação prioritário, conforme a norma ABNT NBR 16747.
+        </p>
+        <a href="contato.html"
+          class="self-start mt-2 bg-primary text-white text-sm font-bold px-7 py-3.5 rounded-lg hover:bg-secondary transition tracking-wide">SAIBA
+          MAIS</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CLIENTES -->
+  <section id="clientes" class="bg-gray-950 py-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold text-primary uppercase tracking-[0.3em]">Clientes</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white mt-3 leading-tight">
+          empresas que<br>confiam na AAVAL
+        </h2>
+      </div>
+
+      <!-- Track -->
+      <div class="relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="overflow-hidden">
+          <div id="carousel-track" class="flex gap-6 transition-transform duration-500 ease-in-out">
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\26.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\14.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\15.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\16.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\17.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\18.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\20.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\21.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\25.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+            <div
+              class="flex-shrink-0 w-44 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:bg-gray-50 shadow-sm transition">
+              <img src="clientes\12.jpg" alt="Cliente"
+                class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition">
+            </div>
+          </div>
+        </div>
+
+        <!-- Setas -->
+        <div class="flex gap-3 mt-10 justify-end">
+          <button id="btn-prev"
+            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-gray-900 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button id="btn-next"
+            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-gray-900 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <div class="flex flex-col gap-4">
+        <div>
+          <span class="text-3xl font-black tracking-tight">AAVAL</span>
+          <span class="text-white/40 text-xs font-light tracking-widest uppercase ml-2">Engenharia e Perícia</span>
+        </div>
+        <p class="text-white/50 text-sm leading-relaxed">
+          Rua Nove de Julho, 72, cjto. 101<br>
+          Santo Amaro, São Paulo — SP<br>
+          CEP 04739-010
+        </p>
+        <a href="tel:+551155419893" class="text-white/50 text-sm hover:text-white transition">(11) 5541-9893</a>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-white/30">Serviços</span>
+        <ul class="flex flex-col gap-2 text-sm text-white/50">
+          <li><a href="#servicos" class="hover:text-white transition">Vistoria de Vizinhança</a></li>
+          <li><a href="#servicos" class="hover:text-white transition">Avaliação de Imóveis</a></li>
+          <li><a href="#servicos" class="hover:text-white transition">Perícias de Engenharia</a></li>
+          <li><a href="#servicos" class="hover:text-white transition">Inspeção Predial</a></li>
+          <li><a href="#servicos" class="hover:text-white transition">Manual do Proprietário</a></li>
+          <li><a href="#servicos" class="hover:text-white transition">Assistência Técnica Judicial</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-white/30">Navegação</span>
+        <ul class="flex flex-col gap-2 text-sm text-white/50">
+          <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+          <li><a href="#quem-somos" class="hover:text-white transition">Empresa</a></li>
+          <li><a href="#clientes" class="hover:text-white transition">Clientes</a></li>
+          <li><a href="contato.html" class="hover:text-white transition">Contato</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="border-t border-white/10 text-center text-xs text-white/20 py-5">
+      &copy; 2026 AAVAL Engenharia e Perícia &mdash; Todos os direitos reservados
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, easing: 'ease-out-cubic' });
+
+    // Contadores animados
+    function animateCounter(el) {
+      const target = +el.dataset.counter;
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = Math.floor(current);
+      }, 16);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('[data-counter]').forEach(animateCounter);
+          counterObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('section').forEach(s => counterObserver.observe(s));
+
+    // Carrossel de clientes
+    const track = document.getElementById('carousel-track');
+    const itemWidth = 176 + 24; // w-44 (176px) + gap-6 (24px)
+    let current = 0;
+    const total = track.children.length;
+
+    function getVisible() {
+      return Math.floor(track.parentElement.offsetWidth / itemWidth);
+    }
+
+    function updateCarousel() {
+      const max = total - getVisible();
+      current = Math.max(0, Math.min(current, max));
+      track.style.transform = `translateX(-${current * itemWidth}px)`;
+    }
+
+    document.getElementById('btn-prev').addEventListener('click', () => { current--; updateCarousel(); });
+    document.getElementById('btn-next').addEventListener('click', () => { current++; updateCarousel(); });
+
+    setInterval(() => { current = current >= total - getVisible() ? 0 : current + 1; updateCarousel(); }, 3000);
+
+
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        header.classList.remove('bg-transparent');
+        header.classList.add('bg-white', 'shadow-md');
+        header.querySelectorAll('.nav-link').forEach(l => l.classList.replace('text-white', 'text-gray-700'));
+        header.querySelector('a[href="index.html"] span:first-child').classList.replace('text-white', 'text-primary');
+        header.querySelector('a[href="index.html"] span:last-child').classList.replace('text-white/60', 'text-gray-400');
+      } else {
+        header.classList.add('bg-transparent');
+        header.classList.remove('bg-white', 'shadow-md');
+        header.querySelectorAll('.nav-link').forEach(l => l.classList.replace('text-gray-700', 'text-white'));
+        header.querySelector('a[href="index.html"] span:first-child').classList.replace('text-primary', 'text-white');
+        header.querySelector('a[href="index.html"] span:last-child').classList.replace('text-gray-400', 'text-white/60');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

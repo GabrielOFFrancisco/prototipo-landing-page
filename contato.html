@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — AAVAL Engenharia e Perícia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0057A8',
+            secondary: '#003F7A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg { background: linear-gradient(135deg, #001a3a 0%, #003F7A 50%, #0057A8 100%); }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 2px;
+      background: #0057A8;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 87, 168, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="index.html" class="flex items-baseline gap-2">
+        <span class="text-2xl font-black text-white tracking-tight">AAVAL</span>
+        <span class="text-xs text-white/60 font-light tracking-widest uppercase">Engenharia e Perícia</span>
+      </a>
+      <nav class="hidden md:flex gap-8 text-sm font-medium text-white/80">
+        <a href="index.html" class="nav-link hover:text-white transition">Home</a>
+        <a href="index.html#quem-somos" class="nav-link hover:text-white transition">Empresa</a>
+        <a href="index.html#servicos" class="nav-link hover:text-white transition">Serviços</a>
+        <a href="index.html#clientes" class="nav-link hover:text-white transition">Clientes</a>
+        <a href="contato.html" class="nav-link text-white border-b-2 border-white/60 pb-0.5">Contato</a>
+      </nav>
+      <a href="tel:+551155419893"
+        class="hidden md:flex items-center gap-2 text-sm font-semibold bg-white text-primary px-4 py-2 rounded-lg hover:bg-blue-50 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.23 1.05L7.5 9.5a16 16 0 006.99 7l1.47-1.6a1 1 0 011.05-.23l3.3 1.1a1 1 0 01.69.95V19a2 2 0 01-2 2C9.16 21 3 14.84 3 7V5z"/>
+        </svg>
+        (11) 5541-9893
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-40 pb-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-10 right-20 w-80 h-80 rounded-full border border-white"></div>
+      <div class="absolute bottom-0 left-10 w-64 h-64 rounded-full border border-white"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="800">
+      <span class="text-xs font-semibold text-white/60 uppercase tracking-[0.3em] inline-block mb-4">Fale Conosco</span>
+      <h1 class="text-5xl md:text-6xl font-black text-white leading-tight tracking-tight">
+        Entre em<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-100">contato</span>
+      </h1>
+      <p class="text-white/60 mt-4 text-lg max-w-lg font-light">
+        Nossa equipe está pronta para atender sua demanda com agilidade e precisão técnica.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16">
+
+      <!-- Informações laterais -->
+      <div class="w-full lg:w-2/5 flex flex-col gap-10" data-aos="fade-right" data-aos-duration="900">
+
+        <div class="flex flex-col gap-3">
+          <div class="w-1 h-10 bg-primary rounded-full"></div>
+          <h2 class="text-3xl font-black text-gray-900">Informações de contato</h2>
+          <p class="text-gray-500 leading-relaxed">
+            Atendemos construtoras, incorporadoras, escritórios de advocacia e particulares em todo o Brasil.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-6">
+
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.23 1.05L7.5 9.5a16 16 0 006.99 7l1.47-1.6a1 1 0 011.05-.23l3.3 1.1a1 1 0 01.69.95V19a2 2 0 01-2 2C9.16 21 3 14.84 3 7V5z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Telefone</p>
+              <a href="tel:+551155419893" class="text-gray-800 font-semibold hover:text-primary transition">(11) 5541-9893</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Endereço</p>
+              <p class="text-gray-800 font-semibold leading-relaxed">
+                Rua Nove de Julho, 72, cjto. 101<br>
+                Santo Amaro, São Paulo — SP<br>
+                CEP 04739-010
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Horário</p>
+              <p class="text-gray-800 font-semibold">Segunda a Sexta: 8h às 18h</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Divisor -->
+        <div class="border-t border-gray-100 pt-8">
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Certificações</p>
+          <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-5 py-4">
+            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-gray-800">ABNT NBR 14653</p>
+              <p class="text-xs text-gray-500">Avaliação de bens imóveis</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Formulário -->
+      <div class="w-full lg:w-3/5" data-aos="fade-left" data-aos-duration="900">
+        <form id="form-contato" class="flex flex-col gap-6">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label for="nome" class="text-xs font-bold text-gray-500 uppercase tracking-widest">Nome <span class="text-primary">*</span></label>
+              <input id="nome" type="text" placeholder="Seu nome completo" required
+                class="border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-800 placeholder-gray-400 transition hover:border-gray-300 focus:border-primary">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="empresa" class="text-xs font-bold text-gray-500 uppercase tracking-widest">Empresa</label>
+              <input id="empresa" type="text" placeholder="Nome da empresa"
+                class="border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-800 placeholder-gray-400 transition hover:border-gray-300 focus:border-primary">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label for="telefone" class="text-xs font-bold text-gray-500 uppercase tracking-widest">Telefone <span class="text-primary">*</span></label>
+              <input id="telefone" type="tel" placeholder="(11) 00000-0000" required
+                class="border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-800 placeholder-gray-400 transition hover:border-gray-300 focus:border-primary">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="email" class="text-xs font-bold text-gray-500 uppercase tracking-widest">E-mail <span class="text-primary">*</span></label>
+              <input id="email" type="email" placeholder="seu@email.com" required
+                class="border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-800 placeholder-gray-400 transition hover:border-gray-300 focus:border-primary">
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="motivo" class="text-xs font-bold text-gray-500 uppercase tracking-widest">Motivo do Contato <span class="text-primary">*</span></label>
+            <select id="motivo" required
+              class="border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-800 bg-white transition hover:border-gray-300 focus:border-primary appearance-none cursor-pointer">
+              <option value="" disabled selected>Selecione um motivo</option>
+              <option value="vistoria">Relatório de Vistoria de Vizinhança</option>
+              <option value="avaliacao">Avaliação de Imóveis</option>
+              <option value="entrega">Entrega / Recebimento de Obras</option>
+              <option value="inspecao">Inspeção Predial</option>
+              <option value="pericia">Perícias de Engenharia</option>
+              <option value="manual">Manual do Proprietário de Áreas Comuns</option>
+              <option value="judicial">Assistência Técnica Judicial</option>
+              <option value="outro">Outro assunto</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="mensagem" class="text-xs font-bold text-gray-500 uppercase tracking-widest">Mensagem</label>
+            <textarea id="mensagem" rows="5" placeholder="Descreva sua necessidade..."
+              class="border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-800 placeholder-gray-400 transition hover:border-gray-300 focus:border-primary resize-none"></textarea>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <button type="submit"
+              class="bg-primary text-white font-bold py-4 rounded-xl hover:bg-secondary transition text-sm tracking-widest uppercase">
+              Enviar Mensagem
+            </button>
+
+            <!-- Feedback -->
+            <div id="feedback" class="hidden items-center gap-3 bg-green-50 border border-green-200 rounded-xl px-5 py-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <p class="text-sm text-green-700 font-medium">Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="flex flex-col gap-4">
+        <div>
+          <span class="text-3xl font-black tracking-tight">AAVAL</span>
+          <span class="text-white/40 text-xs font-light tracking-widest uppercase ml-2">Engenharia e Perícia</span>
+        </div>
+        <p class="text-white/50 text-sm leading-relaxed">
+          Rua Nove de Julho, 72, cjto. 101<br>
+          Santo Amaro, São Paulo — SP<br>
+          CEP 04739-010
+        </p>
+        <a href="tel:+551155419893" class="text-white/50 text-sm hover:text-white transition">(11) 5541-9893</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-white/30">Serviços</span>
+        <ul class="flex flex-col gap-2 text-sm text-white/50">
+          <li><a href="index.html#servicos" class="hover:text-white transition">Vistoria de Vizinhança</a></li>
+          <li><a href="index.html#servicos" class="hover:text-white transition">Avaliação de Imóveis</a></li>
+          <li><a href="index.html#servicos" class="hover:text-white transition">Perícias de Engenharia</a></li>
+          <li><a href="index.html#servicos" class="hover:text-white transition">Inspeção Predial</a></li>
+          <li><a href="index.html#servicos" class="hover:text-white transition">Manual do Proprietário</a></li>
+          <li><a href="index.html#servicos" class="hover:text-white transition">Assistência Técnica Judicial</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-4">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-white/30">Navegação</span>
+        <ul class="flex flex-col gap-2 text-sm text-white/50">
+          <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+          <li><a href="index.html#quem-somos" class="hover:text-white transition">Empresa</a></li>
+          <li><a href="index.html#clientes" class="hover:text-white transition">Clientes</a></li>
+          <li><a href="contato.html" class="hover:text-white transition">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 text-center text-xs text-white/20 py-5">
+      &copy; 2026 AAVAL Engenharia e Perícia &mdash; Todos os direitos reservados
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, easing: 'ease-out-cubic' });
+
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        header.classList.remove('bg-transparent');
+        header.classList.add('bg-white', 'shadow-md');
+        header.querySelectorAll('.nav-link').forEach(l => l.classList.replace('text-white', 'text-gray-700'));
+        header.querySelector('a[href="index.html"] span:first-child').classList.replace('text-white', 'text-primary');
+        header.querySelector('a[href="index.html"] span:last-child').classList.replace('text-white/60', 'text-gray-400');
+      } else {
+        header.classList.add('bg-transparent');
+        header.classList.remove('bg-white', 'shadow-md');
+        header.querySelectorAll('.nav-link').forEach(l => l.classList.replace('text-gray-700', 'text-white'));
+        header.querySelector('a[href="index.html"] span:first-child').classList.replace('text-primary', 'text-white');
+        header.querySelector('a[href="index.html"] span:last-child').classList.replace('text-gray-400', 'text-white/60');
+      }
+    });
+
+    // Máscara telefone
+    document.getElementById('telefone').addEventListener('input', function () {
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 6) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+      else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+      else if (v.length > 0) v = `(${v}`;
+      this.value = v;
+    });
+
+    // Submit
+    document.getElementById('form-contato').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const fb = document.getElementById('feedback');
+      fb.classList.remove('hidden');
+      fb.classList.add('flex');
+      this.reset();
+      setTimeout(() => { fb.classList.add('hidden'); fb.classList.remove('flex'); }, 5000);
+    });
+  </script>
+
+</body>
+</html>
